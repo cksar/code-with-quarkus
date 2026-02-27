@@ -20,6 +20,7 @@ services:
     container_name: quarkus-app
     ports:
       - "8080:8080"
+      - "8443:8443"
     depends_on:
       - db
     environment:
@@ -29,6 +30,8 @@ services:
       QUARKUS_HTTP_CORS_ENABLED: "true"
       QUARKUS_HTTP_CORS_ORIGINS: "/.*/"
       QUARKUS_HTTP_CORS_HEADERS: "*"
+    volumes:
+      - ~/quarkus-cert/keystore.p12:/deployments/certs/keystore.p12:ro
 
 volumes:
   postgres_data:
