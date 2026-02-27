@@ -26,6 +26,9 @@ services:
       QUARKUS_DATASOURCE_JDBC_URL: jdbc:postgresql://db:5432/quarkus
       QUARKUS_DATASOURCE_USERNAME: quarkus
       QUARKUS_DATASOURCE_PASSWORD: quarkus
+      QUARKUS_HTTP_CORS_ENABLED: "true"
+      QUARKUS_HTTP_CORS_ORIGINS: "/.*/"
+      QUARKUS_HTTP_CORS_HEADERS: "*"
 
 volumes:
   postgres_data:
